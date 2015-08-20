@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Rivets - IE8 shim example</title>
+        <style media="screen">
+            .done {
+                background-color: #0f4;
+            }
+        </style>
+    </head>
+    <body>
+    	<h1>IE8 shim exxample for Rivets</h1>
+    	<p>This extends the Object.prototype and watches for changes to an Object instance, aka yer <b>model</b>!</p>
+    	<p>Note: ensure ones markup is super clean, otherwise rivets can bind more than once in IE8</p>
+    	<div id="auction">
+    		<p>{ auction.counter }</p>
+    		<div rv-show="auction.remaining | lt 120">
+    			<h4>Hurry up!</h4>
+    			<p>This auction is ending in { auction.remaining | time }.</p>
+    		</div>
+    		<ul>
+    		  <li rv-each-item="auction.items" rv-class-done='item.done'>
+    		    <input type="checkbox" rv-checked="item.done">
+    		    <span>{ item.time | time }</span>
+    		  </li>
+    		</ul>
+    		<button rv-on-click="controller.bid">Place a bid</button>
+    	</div>
+    	<p>Note: IE8 only calls the change event on a checkbox's when it is no longer focus, aka after clicking the checkbox click away to invoke the change</p>
+        <script src="lib/rivets.js"></script>
+        <script src="lib/rivets-ie8.js"></script>
+        <script src="lib/app.js"></script>
+    </body>
+</html>
