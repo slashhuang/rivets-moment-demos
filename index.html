@@ -2,11 +2,9 @@
 <html>
     <head>
         <title>Rivets - IE8 shim example</title>
-        <style media="screen">
-            .done {
-                background-color: #0f4;
-            }
-        </style>
+		<script src="bower_components/moment/moment.js"></script>
+		<script src="bower_components/rivets/dist/rivets.js"></script>
+		<script src="lib/app.js"></script>
     </head>
     <body>
     	<h1>IE8 shim exxample for Rivets</h1>
@@ -27,8 +25,5 @@
     		<button rv-on-click="controller.bid">Place a bid</button>
     	</div>
     	<p>Note: IE8 only calls the change event on a checkbox's when it is no longer focus, aka after clicking the checkbox click away to invoke the change</p>
-        <script src="lib/rivets.js"></script>
-        <script src="lib/rivets-ie8.js"></script>
-        <script src="lib/app.js"></script>
     </body>
 </html>
